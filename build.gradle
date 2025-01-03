@@ -1,0 +1,42 @@
+buildscript {
+    ext {
+        defaultPackageName = 'com.reveny.nativecheck'
+        verCode = 659
+        verName = '6.5.9'
+        androidTargetSdkVersion = 34
+        androidMinSdkVersion = 27
+        androidBuildToolsVersion = '34.0.0'
+        androidCompileSdkVersion = 34
+        androidCompileNdkVersion = '27.0.12077973'
+        androidSourceCompatibility = JavaVersion.VERSION_17
+        androidTargetCompatibility = JavaVersion.VERSION_17
+    }
+
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+
+    dependencies {
+        classpath libs.gradle.plugin
+        classpath libs.kotlin.gradle.plugin
+    }
+}
+
+plugins {
+    alias(libs.plugins.materialthemebuilder) apply false
+    alias(libs.plugins.autoresconfig) apply false
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        google()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}

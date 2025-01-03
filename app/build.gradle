@@ -1,0 +1,106 @@
+plugins {
+    id 'com.android.application'
+    alias(libs.plugins.materialthemebuilder)
+    alias(libs.plugins.autoresconfig)
+}
+
+android {
+    namespace 'com.reveny.nativecheck'
+    compileSdk rootProject.ext.androidCompileSdkVersion
+
+    defaultConfig {
+        applicationId rootProject.ext.defaultPackageName
+        minSdk rootProject.ext.androidMinSdkVersion
+        targetSdk rootProject.ext.androidTargetSdkVersion
+
+        if (project.plugins.hasPlugin('com.android.application')) {
+            versionCode rootProject.ext.verCode
+            versionName rootProject.ext.verName
+        }
+
+        buildConfigField 'long', 'BUILD_TIME', Instant.now().epochSecond.toString()
+    }
+
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+
+    buildTypes {
+        debug {
+            ndk {
+                debugSymbolLevel 'FULL'
+            }
+            externalNativeBuild {
+                ndkBuild {
+                    arguments "APP_OPTIM=debug"
+                    arguments "NDK_DEBUG=1"
+                }
+            }
+        }
+        release {
+            externalNativeBuild {
+                ndkBuild {
+                    arguments "APP_OPTIM=release"
+                    arguments "NDK_DEBUG=0"
+                }
+            }
+
+            minifyEnabled true
+            multiDexEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+materialThemeBuilder {
+    themes {
+        def themes = ['Indigo': '3F51B5']
+        themes.each { name, color ->
+            create("Material${name}") {
+                lightThemeFormat = "ThemeOverlay.Light.%s"
+                darkThemeFormat = "ThemeOverlay.Dark.%s"
+                primaryColor = "#${color}"
+            }
+        }
+    }
+    generatePalette true
+}
+
+autoResConfig {
+    generateClass = true
+    generateRes = false
+    generatedClassFullName = 'com.reveny.nativecheck.util.LangList'
+    generatedArrayFirstItem = 'SYSTEM'
+}
+
+dependencies {
+    implementation libs.rikkax.appcompat
+    implementation libs.rikkax.core
+    implementation libs.rikkax.insets
+    implementation libs.rikkax.material
+    implementation libs.rikkax.preference
+    implementation libs.rikkax.recyclerview
+    implementation libs.rikkax.widget.borderview
+    implementation libs.rikkax.widget.mainswitchbar
+    implementation libs.rikkax.layoutinflater
+
+    implementation libs.material
+    implementation libs.androidx.activity
+    implementation libs.androidx.browser
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.core
+    implementation libs.androidx.fragment
+    implementation libs.androidx.preference
+    implementation libs.androidx.recyclerview
+    implementation libs.androidx.swiperefreshlayout
+}
+
+configurations.configureEach {
+    exclude group: 'androidx.appcompat', module: 'appcompat'
+}
