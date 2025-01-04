@@ -13,7 +13,7 @@ Website: [My Website](https://reveny.me) <br>
 Email: [contact@reveny.me](mailto:contact@reveny.me) <br>
 
 ## Support Me
-If you'd like to, you can support me on [Patreon](https://www.patreon.com/c/Reveny)
+If you'd like to, you can support me on [Patreon](https://www.patreon.com/c/Reveny) or on my [Website](https://reveny.me/donate.html)
 
 ## Preview
-<img src="https://github.com/reveny/Android-Native-Root-Detector/blob/main/preview.png" width="350">
+<img src="https://github.com/reveny/Android-Native-Root-Detector/blob/main/art/preview.png" width="350">
