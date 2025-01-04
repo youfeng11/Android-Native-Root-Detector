@@ -5,14 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.VIBRATE" />
-
-    <queries>
-        <package android:name="io.github.huskydg.magisk" />
-        <package android:name="me.weishu.kernelsu" />
-        <package android:name="me.bmax.apatch" />
-        <package android:name="io.github.vvb2060.magisk" />
-        <package android:name="icu.nullptr.hidemyapplist" />
-    </queries>
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" tools:ignore="QueryAllPackagesPermission" />
 
     <application
         android:name=".App"
