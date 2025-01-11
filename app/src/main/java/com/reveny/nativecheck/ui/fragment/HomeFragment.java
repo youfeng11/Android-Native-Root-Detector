@@ -183,6 +183,7 @@ public class HomeFragment extends BaseFragment {
         }
         binding.Signature.setText(String.format("App Signature : %s", getSignature()));
 
+        binding.ExperimentalEnabled.setText(String.format("Experimental Detections: %s", enableExperimental ? "true" : "false"));
         return binding.getRoot();
     }
 
