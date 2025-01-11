@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -299,8 +300,8 @@ public class HomeFragment extends BaseFragment {
 
         if (!valid)
         {
-            binding.SignatureValid.setTextColor(getResources().getColor(rikka.material.R.color.material_red_A700));
-            binding.Signature.setTextColor(getResources().getColor(rikka.material.R.color.material_red_A700));
+            binding.SignatureValid.setTextColor(Color.RED);
+            binding.Signature.setTextColor(Color.RED);
         }
     }
 
