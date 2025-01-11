@@ -1,15 +1,14 @@
 buildscript {
     ext {
         defaultPackageName = 'com.reveny.nativecheck'
-        verCode = 659
-        verName = '6.5.9'
-        androidTargetSdkVersion = 34
+        verCode = 660
+        verName = '6.6.0'
+        androidTargetSdkVersion = 35
         androidMinSdkVersion = 27
-        androidBuildToolsVersion = '34.0.0'
-        androidCompileSdkVersion = 34
-        androidCompileNdkVersion = '27.0.12077973'
-        androidSourceCompatibility = JavaVersion.VERSION_17
-        androidTargetCompatibility = JavaVersion.VERSION_17
+        androidCompileSdkVersion = 35
+        androidCompileNdkVersion = '27.2.12479018'
+        androidSourceCompatibility = JavaVersion.VERSION_21
+        androidTargetCompatibility = JavaVersion.VERSION_21
     }
 
     repositories {
