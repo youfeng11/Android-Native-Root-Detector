@@ -51,10 +51,12 @@ import com.reveny.nativecheck.util.ThemeUtil;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.MessageDigest;
@@ -139,7 +141,7 @@ public class HomeFragment extends BaseFragment {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
         boolean isSnowDisabled = sharedPreferences.getBoolean("disable_snow", false);
-        boolean enableExperimental = sharedPreferences.getBoolean("enable_experimental", false);
+        boolean enableExperimental = sharedPreferences.getBoolean("enable_experimental", true);
 
         if (isSnowDisabled) {
             binding.snowView.setVisibility(View.GONE);
@@ -165,6 +167,9 @@ public class HomeFragment extends BaseFragment {
 
         String androidVersion = Build.VERSION.RELEASE;
         binding.AndroidVersion.setText(String.format("Android Version : %s", androidVersion));
+
+        String kernelVersion = getKernelVersion();
+        binding.KernelVersion.setText(String.format("Kernel Version : %s", kernelVersion));
 
         PackageManager packageManager = requireContext().getPackageManager();
         try {
@@ -260,6 +265,27 @@ public class HomeFragment extends BaseFragment {
         }
         manufacturer += " " + Build.MODEL + " ";
         return manufacturer;
+    }
+
+    public String getKernelVersion() {
+        StringBuilder kernelVersion = new StringBuilder();
+        try {
+            // Execute the uname command to get the kernel version
+            Process process = Runtime.getRuntime().exec("uname -r");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                kernelVersion.append(line);
+            }
+            reader.close();
+            process.waitFor();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // Split the kernel version string by hyphen and return the first part
+        String[] parts = kernelVersion.toString().split("-");
+        return parts[0];
     }
 
     public void setSignature(boolean valid) {

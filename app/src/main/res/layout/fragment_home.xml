@@ -161,6 +161,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textAppearance="?textAppearanceBodyMedium" />
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/KernelVersion"
+                            style="@style/Label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?textAppearanceBodyMedium" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
                 <com.google.android.material.card.MaterialCardView
