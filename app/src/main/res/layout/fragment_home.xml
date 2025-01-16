@@ -110,22 +110,20 @@
                             android:layout_toEndOf="@id/status_icon"
                             android:fontFamily="sans-serif-medium"
                             android:gravity="center"
-                            android:text="The Environment is abnormal"
+                            android:text="@string/the_environment_is_abnormal"
                             android:textAppearance="?textAppearanceTitleMedium"
                             android:textColor="?colorOnPrimary"
-                            android:textSize="16sp"
-                            tools:ignore="HardcodedText" />
+                            android:textSize="16sp" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/status_summary"
-                            android:text="Modifications to the environment are detected."
+                            android:text="@string/description_abnormal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/status_title"
                             android:layout_alignStart="@id/status_title"
                             android:textAppearance="?textAppearanceBodyMedium"
-                            android:textColor="?colorOnPrimary"
-                            tools:ignore="HardcodedText" />
+                            android:textColor="?colorOnPrimary" />
 
                     </RelativeLayout>
                 </com.google.android.material.card.MaterialCardView>

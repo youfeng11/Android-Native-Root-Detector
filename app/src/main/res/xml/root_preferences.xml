@@ -2,23 +2,23 @@
     <PreferenceCategory app:title="General">
         <CheckBoxPreference
             app:key="disable_telemetry"
-            app:title="Disable Telemetry"
-            app:summaryOff="This will disable Sentry telemetry"
-            app:summaryOn="Sentry telemetry is disabled"
+            app:title="@string/pref_telemetry"
+            app:summaryOff="@string/pref_telemetry_off"
+            app:summaryOn="@string/pref_telemetry_on"
             app:defaultValue="false" />
 
         <CheckBoxPreference
             app:key="disable_snow"
-            app:title="Disable Winter Theme"
-            app:summaryOff="This will disable the winter theme"
-            app:summaryOn="The winder theme is disabled"
+            app:title="@string/pref_snow"
+            app:summaryOff="@string/pref_snow_off"
+            app:summaryOn="@string/pref_snow_on"
             app:defaultValue="false" />
 
         <CheckBoxPreference
             app:key="enable_experimental"
-            app:title="Enable Experimental Detections"
-            app:summaryOff="This will enable experimental detections (restart required)"
-            app:summaryOn="Experimental detections are enabled"
+            app:title="@string/pref_experimental"
+            app:summaryOff="@string/pref_experimental_off"
+            app:summaryOn="@string/pref_experimental_on"
             app:defaultValue="true" />
     </PreferenceCategory>
 </PreferenceScreen>

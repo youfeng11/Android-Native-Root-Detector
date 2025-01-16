@@ -164,27 +164,27 @@ public class HomeFragment extends BaseFragment {
         binding.nestedScrollView.getBorderViewDelegate().setBorderVisibilityChangedListener((top, oldTop, bottom, oldBottom) -> binding.appBar.setLifted(!top));
 
         String deviceInfo = getString(R.string.device_info, getDevice(), Build.DEVICE);
-        binding.Device.setText(String.format("Device : %s", deviceInfo));
+        binding.Device.setText(String.format(R.string.sysinfo_device, deviceInfo));
 
         String androidVersion = Build.VERSION.RELEASE;
-        binding.AndroidVersion.setText(String.format("Android Version : %s", androidVersion));
+        binding.AndroidVersion.setText(String.format(R.string.sysinfo_android_version, androidVersion));
 
         String kernelVersion = getKernelVersion();
-        binding.KernelVersion.setText(String.format("Kernel Version : %s", kernelVersion));
+        binding.KernelVersion.setText(String.format(R.string.sysinfo_kernel_version, kernelVersion));
 
         PackageManager packageManager = requireContext().getPackageManager();
         try {
             PackageInfo packageInfo = packageManager.getPackageInfo(requireContext().getPackageName(), 0);
 
             String versionName = packageInfo.versionName;
-            binding.AppVersion.setText(String.format("App Version : %s", versionName));
+            binding.AppVersion.setText(String.format(R.string.appinfo_version, versionName));
         } catch (PackageManager.NameNotFoundException e) {
             Log.e("RevenyDetector", "Package name not found.", e);
-            binding.AppVersion.setText(String.format("App Version : %s", "UNKNOWN"));
+            binding.AppVersion.setText(String.format(R.string.appinfo_version, R.string.appinfo_unknown_version));
         }
-        binding.Signature.setText(String.format("App Signature : %s", getSignature()));
+        binding.Signature.setText(String.format(R.string.appinfo_signature, getSignature()));
 
-        binding.ExperimentalEnabled.setText(String.format("Experimental Detections: %s", enableExperimental ? "true" : "false"));
+        binding.ExperimentalEnabled.setText(String.format(R.string.experimental_detections, enableExperimental ? R.string.value_true : R.string.value_false));
         return binding.getRoot();
     }
 
@@ -212,8 +212,8 @@ public class HomeFragment extends BaseFragment {
         }
 
         if (detections == null || detections.length == 0) {
-            binding.statusTitle.setText("The Environment is normal");
-            binding.statusSummary.setText("No modifications to the environment are detected.");
+            binding.statusTitle.setText(R.string.the_environment_is_normal);
+            binding.statusSummary.setText(R.string.description_normal);
             return;
         }
 
@@ -296,7 +296,7 @@ public class HomeFragment extends BaseFragment {
             return;
         }
 
-        binding.SignatureValid.setText(String.format("Signature Valid: %s", (valid ? "true" : "false")));
+        binding.SignatureValid.setText(String.format(R.string.appinfo_is_signature_valid, (valid ? R.string.value_true : R.string.value_false)));
 
         if (!valid)
         {
