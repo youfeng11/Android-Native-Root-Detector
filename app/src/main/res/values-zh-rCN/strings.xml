@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Native Detector</string>
+    <string name="about_view_source_code"><![CDATA[加入我们的 %1$s 频道<br/><br>版权所有 © %2$s<br/>]]></string>
+    <string name="About">关于</string>
+
+    <string name="color_indigo">Indigo</string>
+    <string name="DayNight">暗色模式</string>
+    <string name="device_info">%s（%s）</string>
+    <string name="the_environment_is_abnormal">环境异常</string>
+    <string name="settings">设置</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+</resources>
