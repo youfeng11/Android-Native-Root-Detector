@@ -31,6 +31,9 @@
     <string name="pref_experimental">Enable Experimental Detections</string>
     <string name="pref_experimental_on">Experimental detections are enabled</string>
     <string name="pref_experimental_off">This will enable experimental detections (restart required)</string>
+    <string name="pref_use_system_language">Use System Language</string>
+    <string name="pref_use_system_language_on">The app will use the system language</string>
+    <string name="pref_use_system_language_off">This will use the default language</string>
 
     <!-- Detection Strings -->
     <string name="modified_environment_detected">Modified Environment Detected</string>

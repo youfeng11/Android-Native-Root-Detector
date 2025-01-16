@@ -3,7 +3,10 @@ package com.reveny.nativecheck;
 import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.text.TextUtils;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.preference.PreferenceManager;
@@ -30,7 +33,6 @@ public class App extends Application {
 
     private static final ExecutorService executorService = Executors.newCachedThreadPool();
 
-
     public static App getInstance() {
         return instance;
     }
@@ -39,11 +41,13 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
-        // Initialize the singleton instance
         instance = this;
 
         pref = PreferenceManager.getDefaultSharedPreferences(this);
+
+        // Language settings
+        boolean useSystemLanguage = pref.getBoolean("use_system_language", true);
+        LocaleDelegate.setDefaultLocale(getLocale(useSystemLanguage ? null : "en"));
 
         AppCompatDelegate.setDefaultNightMode(ThemeUtil.getDarkTheme());
 
@@ -51,7 +55,13 @@ public class App extends Application {
         executorService.submit(HTML_TEMPLATE_DARK);
     }
 
-    // Method to read HTML from the assets
+    public static Locale getLocale(String tag) {
+        if (TextUtils.isEmpty(tag) || "SYSTEM".equals(tag)) {
+            return LocaleDelegate.getSystemLocale();
+        }
+        return Locale.forLanguageTag(tag);
+    }
+
     @SuppressLint("NewApi")
     private static String readWebviewHTML(String name) {
         try {
