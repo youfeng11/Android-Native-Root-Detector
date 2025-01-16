@@ -21,6 +21,7 @@
     <string name="description_abnormal">Modifications to the environment are detected.</string>
     <string name="settings">Settings</string>
     <string name="title_activity_settings">SettingsActivity</string>
+
     <string name="pref_telemetry">Disable Telemetry</string>
     <string name="pref_telemetry_on">Sentry telemetry is disabled</string>
     <string name="pref_telemetry_off">This will disable Sentry telemetry</string>
@@ -30,4 +31,50 @@
     <string name="pref_experimental">Enable Experimental Detections</string>
     <string name="pref_experimental_on">Experimental detections are enabled</string>
     <string name="pref_experimental_off">This will enable experimental detections (restart required)</string>
+
+    <!-- Detection Strings -->
+    <string name="modified_environment_detected">Modified Environment Detected</string>
+    <string name="suspicious_mount_detected">Suspicious Mount Detected</string>
+    <string name="detected_kernelsu_magisk">Detected KernelSU/Magisk</string>
+    <string name="detected_magisk">Detected Magisk</string>
+    <string name="detected_zygisk_assistant">Detected Zygisk-Assistant</string>
+    <string name="bootloader_unlocked">Bootloader Unlocked</string>
+    <string name="oem_unlocking_enabled">OEM Unlocking Enabled</string>
+    <string name="detected_zygisk_official_magisk">Detected Zygisk (Official Magisk)</string>
+    <string name="detected_zygisk_next">Detected Zygisk Next (%s)</string>
+    <string name="debug_fingerprint_detected">Debug Fingerprint detected (%s)</string>
+    <string name="found_magisk_recovery_file">Found Magisk/Recovery File</string>
+    <string name="found_su_binary">Found SU Binary</string>
+    <string name="detected_zygisk">Detected Zygisk</string>
+    <string name="detected_magisk_module">Detected Magisk Module</string>
+    <string name="found_injection">Found Injection</string>
+    <string name="detected_lsposed">Detected LSPosed (%s)</string>
+    <string name="no_system_apps_found">No system apps found</string>
+    <string name="detected_lineageos">Detected LineageOS (%s)</string>
+    <string name="no_info_given">No info given</string>
+    <string name="detected_modified_hosts_file">Detected modified Hosts file</string>
+    <string name="detected_resetprop">Detected Resetprop</string>
+    <string name="tee_is_broken">TEE is broken</string>
+    <string name="keybox_revoked_by_google">"Keybox %s was revoked by google"</string>
+    <string name="key_attestation_failed">Key Attestation failed</string>
+    <string name="detected_abnormal_boot_state">Detected Abnormal Boot State</string>
+    <string name="detected_leaked_keybox">Detected Leaked Keybox</string>
+    <string name="detected_mount_abnormality">Detected Mount Abnormality</string>
+    <string name="detected_root_solution">Detected Root Solution</string>
+    <string name="detected_hide_my_applist">Detected Hide My Applist</string>
+    <string name="detected_ksu_ap_modules_img">Detected KSU/AP modules.img</string>
+    <string name="detected_custom_rom">Detected Custom Rom (%s)</string>
+    <string name="vendor_sepolicy_contains_lineage">vendor_sepolicy.cil contains lineage</string>
+    <string name="detected_gapps">Detected Gapps</string>
+    <string name="detected_custom_kernel">Detected Custom Kernel</string>
+    <string name="detected_framework_patch">Detected Framework Patch</string>
+    <string name="detected_overlayfs">Detected Overlayfs</string>
+    <string name="detected_overlay_mounted">Overlay mounted but mount may be hidden</string>
+    <string name="overlay_mounted_but_mount_may_be_hidden">Overlay mounted but mount may be hidden</string>
+    <string name="detected_risky_app">Detected Risky App</string>
+    <string name="hide_my_applist_is_likely_used">Hide My Applist is likely used</string>
+    <string name="addon_d_or_install_recovery_sh_exists">Addon.d or install-recovery.sh exists</string>
+    <string name="detected_root_app">Detected Root App</string>
+    <string name="detected_mount_inconsistency">Detected Mount Inconsistency</string>
+    <string name="umount_detected">Umount Detected</string>
 </resources>
