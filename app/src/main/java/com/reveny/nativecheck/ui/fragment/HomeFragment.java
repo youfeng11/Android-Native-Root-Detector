@@ -164,27 +164,27 @@ public class HomeFragment extends BaseFragment {
         binding.nestedScrollView.getBorderViewDelegate().setBorderVisibilityChangedListener((top, oldTop, bottom, oldBottom) -> binding.appBar.setLifted(!top));
 
         String deviceInfo = getString(R.string.device_info, getDevice(), Build.DEVICE);
-        binding.Device.setText(String.format(R.string.sysinfo_device, deviceInfo));
+        binding.Device.setText(String.format(getString(R.string.sysinfo_device), deviceInfo));
 
         String androidVersion = Build.VERSION.RELEASE;
-        binding.AndroidVersion.setText(String.format(R.string.sysinfo_android_version, androidVersion));
+        binding.AndroidVersion.setText(String.format(getString(R.string.sysinfo_android_version), androidVersion));
 
         String kernelVersion = getKernelVersion();
-        binding.KernelVersion.setText(String.format(R.string.sysinfo_kernel_version, kernelVersion));
+        binding.KernelVersion.setText(String.format(getString(R.string.sysinfo_kernel_version), kernelVersion));
 
         PackageManager packageManager = requireContext().getPackageManager();
         try {
             PackageInfo packageInfo = packageManager.getPackageInfo(requireContext().getPackageName(), 0);
 
             String versionName = packageInfo.versionName;
-            binding.AppVersion.setText(String.format(R.string.appinfo_version, versionName));
+            binding.AppVersion.setText(String.format(getString(R.string.appinfo_version), versionName));
         } catch (PackageManager.NameNotFoundException e) {
             Log.e("RevenyDetector", "Package name not found.", e);
-            binding.AppVersion.setText(String.format(R.string.appinfo_version, R.string.appinfo_unknown_version));
+            binding.AppVersion.setText(String.format(getString(R.string.appinfo_version), getString(R.string.appinfo_unknown_version)));
         }
-        binding.Signature.setText(String.format(R.string.appinfo_signature, getSignature()));
+        binding.Signature.setText(String.format(getString(R.string.appinfo_signature), getSignature()));
 
-        binding.ExperimentalEnabled.setText(String.format(R.string.experimental_detections, enableExperimental ? R.string.value_true : R.string.value_false));
+        binding.ExperimentalEnabled.setText(String.format(getString(R.string.experimental_detections), enableExperimental ? getString(R.string.value_true) : getString(R.string.value_false)));
         return binding.getRoot();
     }
 
@@ -296,7 +296,7 @@ public class HomeFragment extends BaseFragment {
             return;
         }
 
-        binding.SignatureValid.setText(String.format(R.string.appinfo_is_signature_valid, (valid ? R.string.value_true : R.string.value_false)));
+        binding.SignatureValid.setText(String.format(getString(R.string.appinfo_is_signature_valid), (valid ? getString(R.string.value_true) : getString(R.string.value_false))));
 
         if (!valid)
         {
