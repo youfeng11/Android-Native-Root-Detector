@@ -7,7 +7,7 @@
     <string name="sysinfo_device">Device: %s</string>
     <string name="sysinfo_android_version">Android Version: %s</string>
     <string name="sysinfo_kernel_version">Kernel Version: %s</string>
-    <string name="appinfo_version">App Version:%s</string>
+    <string name="appinfo_version">App Version: %s</string>
     <string name="appinfo_signature">App Signature: %s</string>
     <string name="appinfo_is_signature_valid">Signature Valid: %s</string>
     <string name="appinfo_unknown_version">UNKNOWN</string>
@@ -21,4 +21,13 @@
     <string name="description_abnormal">Modifications to the environment are detected.</string>
     <string name="settings">Settings</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="pref_telemetry">Disable Telemetry</string>
+    <string name="pref_telemetry_on">Sentry telemetry is disabled</string>
+    <string name="pref_telemetry_off">This will disable Sentry telemetry</string>
+    <string name="pref_snow">Disable Winter Theme</string>
+    <string name="pref_snow_on">The winder theme is disabled</string>
+    <string name="pref_snow_off">This will disable the winter theme</string>
+    <string name="pref_experimental">Enable Experimental Detections</string>
+    <string name="pref_experimental_on">Experimental detections are enabled</string>
+    <string name="pref_experimental_off">This will enable experimental detections (restart required)</string>
 </resources>
