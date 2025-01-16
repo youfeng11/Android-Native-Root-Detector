@@ -1,6 +1,12 @@
 # Android-Native-Root-Detector
 A tool for detecting root on android
 
+[![Stars](https://img.shields.io/github/stars/reveny/Android-Native-Root-Detector?label=Stars)](https://github.com/reveny)
+[![Release](https://img.shields.io/github/v/release/reveny/Android-Native-Root-Detector?label=Release&logo=github)](https://github.com/reveny/Android-Native-Root-Detector/releases/latest)
+[![Download](https://img.shields.io/github/downloads/reveny/Android-Native-Root-Detector/total?label=Downloads&logo=github)](https://github.com/reveny/Android-Native-Root-Detector/releases/)
+[![Channel](https://img.shields.io/badge/Telegram-Channel-blue.svg?logo=telegram)](https://t.me/rootdetector)
+[![CI](https://github.com/reveny/Android-Native-Root-Detector/actions/workflows/main.yml/badge.svg)](https://github.com/reveny/Android-Native-Root-Detector/actions/workflows/main.yml)
+
 ## Installation
 1. Go to the [Releases](https://github.com/reveny/Android-Native-Root-Detector/releases) tab to download the latest version.
 
