@@ -21,4 +21,13 @@
     <string name="description_abnormal">检测到对环境的修改。</string>
     <string name="settings">设置</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="pref_telemetry">禁用遥测功能</string>
+    <string name="pref_telemetry_on">遥测已关闭</string>
+    <string name="pref_telemetry_off">不再收集和发送匿名统计数据</string>
+    <string name="pref_snow">禁用冬日主题</string>
+    <string name="pref_snow_on">飘雪特效已隐藏</string>
+    <string name="pref_snow_off">不显示雪花飘落粒子特效</string>
+    <string name="pref_experimental">启用实验性检测</string>
+    <string name="pref_experimental_on">实验性检测已开启</string>
+    <string name="pref_experimental_off">使用尚在实验中的检测项（需重启应用）</string>
 </resources>
